@@ -4,13 +4,14 @@ Simple ERP for texting operations
 ```mermaid
 classDiagram
     class Cliente {
-        +int id
+        +String id
         +String nombre
         +String contacto-email
     }
 
     class Lote {
-        +Clinte id
+        +String id
+        +String ClientId
         +String Nombre
         +String Referencia
         +String FechaCreación
@@ -21,19 +22,19 @@ classDiagram
     }
 
     class Factura {
-        +int id
-        +int lote_id
+        +String id
+        +String loteId
         +Date FechaVencimiento
         +double ValorPagado
         +EstadoFactura estadoActual
     }
 
     class EstadoFactura {
-        +int id
+        +String id
         +Time fecha
         +Estado estado
         +String observacion
-        +Factura id
+        +String facturaId
     }
 
         class EstadoLote {
@@ -41,7 +42,7 @@ classDiagram
         +Time fecha
         +Estado estado
         +String observacion
-        +Lote id
+        +String loteId
     }
 
     
